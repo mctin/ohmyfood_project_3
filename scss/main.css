@@ -63,10 +63,10 @@
   color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
 }
 
-.heart-main:hover path {
+.heart-main:hover {
   -webkit-animation: stroke-animation 1s forwards;
           animation: stroke-animation 1s forwards;
-  fill: red;
+  color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
 }
 
 .heart-main:hover ~ .heart-background path {
@@ -74,32 +74,6 @@
           animation: fade-animation 1s ease-in-out forwards;
 }
 
-/*@keyframes stroke-animation {
-  0% {
-    stroke: palevioletred;
-    fill:green;
-    transform: scale(1);
-  }
-  30% {
-    color: #ff79da;
-  }
-  60% {
-    stroke: palevioletred;
-    fill: red;
-    transform: scale(1);
-  }
-  80% {
-    fill:violet;
-    transform: scale(1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke: var(--pink);
-    fill: blueviolet;
-  }
-  */
 body {
   background-color: white;
   color: black;
@@ -110,14 +84,14 @@ body {
 }
 
 h1 {
-  font-family: "roboto", sans-serif;
+  font-family: "Shrikhand", sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
 }
 
 h2 {
   font-family: "roboto", sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -125,13 +99,13 @@ h2 {
 
 h3 {
   font-family: "roboto", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 p {
   font-family: "roboto";
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 
@@ -145,6 +119,13 @@ a {
   margin: 10px;
 }
 
+@media (min-width: 961px) {
+  .gridList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
 .reservez {
   align-items: center;
   background-color: rgb(235, 234, 227);
@@ -164,11 +145,11 @@ a {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: hsl(0deg, 0%, 100%);
-  -webkit-animation: loader 0s;
-          animation: loader 0s;
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  background-color: hsla(0deg, 0%, 100%, 0.9);
+  -webkit-animation: loader 2s;
+          animation: loader 2s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   z-index: 10000;
@@ -177,33 +158,22 @@ a {
   justify-content: center;
 }
 
-.animation__item--1 {
-  background-color: #9356DC;
-}
-
 .animation__item {
-  height: 10rem;
-  width: 10rem;
-  border: red solid 2px;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation: 7s ease 0ms 1 normal none running jiggle;
-          animation: 7s ease 0ms 1 normal none running jiggle;
-}
-
-.animation__item--2 {
-  background-color: #ff79da;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.animation__item--3 {
-  background-color: #99E2D0;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  font-size: 10rem;
+  color: #9356DC;
+  -webkit-animation: jiggle 2s;
+          animation: jiggle 2s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation: 3s ease 1ms 1 normal none running jiggle;
+          animation: 3s ease 1ms 1 normal none running jiggle;
 }
 
 @-webkit-keyframes loader {
+  50% {
+    opacity: 20%;
+    z-index: -10;
+  }
   100% {
     opacity: 0;
     z-index: -10;
@@ -211,6 +181,10 @@ a {
 }
 
 @keyframes loader {
+  50% {
+    opacity: 20%;
+    z-index: -10;
+  }
   100% {
     opacity: 0;
     z-index: -10;
@@ -218,38 +192,32 @@ a {
 }
 @-webkit-keyframes jiggle {
   0% {
-    transform: translateY(0) rotate(360deg);
+    transform: translateX(10rem) rotate(360deg);
   }
   25% {
-    transform: translateX(6rem) rotate(-360deg);
+    transform: translateX(10rem) rotate(180deg);
   }
   75% {
-    transform: translateY(-6rem) rotate(360deg);
+    transform: translateY(-6rem) rotate(1800deg);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(100);
   }
 }
 @keyframes jiggle {
   0% {
-    transform: translateY(0) rotate(360deg);
+    transform: translateX(10rem) rotate(360deg);
   }
   25% {
-    transform: translateX(6rem) rotate(-360deg);
+    transform: translateX(10rem) rotate(180deg);
   }
   75% {
-    transform: translateY(-6rem) rotate(360deg);
+    transform: translateY(-6rem) rotate(1800deg);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(100);
   }
 }
-.animation__itemContainer {
-  display: flex;
-  width: 30rem;
-  justify-content: space-between;
-}
-
 @-webkit-keyframes slideup {
   0% {
     transform: translatey(20px);
@@ -260,7 +228,6 @@ a {
     opacity: 100%;
   }
 }
-
 @keyframes slideup {
   0% {
     transform: translatey(20px);
@@ -389,6 +356,9 @@ a {
 
 .restaurantSection {
   background: #f6f6f6;
+  display: flex;
+  padding: 10px 10px 37px 10px;
+  flex-direction: column;
 }
 
 .homeSection {
@@ -416,7 +386,7 @@ a {
 }
 
 .restaurantItem .restaurantInfo {
-  padding: 2rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
@@ -448,6 +418,18 @@ a {
   right: 1.5rem;
 }
 
+@media (min-width: 961px) {
+  .restoList {
+    display: flex;
+    flex-direction: row;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .restaurantItem {
+    padding: 9px;
+  }
+}
 header {
   background: white;
   z-index: 2;
@@ -496,27 +478,68 @@ header {
   align-items: flex-end;
 }
 
-.menuItem:nth-child(3) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
-}
-
 .menuItem {
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   border-radius: 0.75rem;
   margin: 1rem 0;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
-  -webkit-animation: iconmenu 1s;
-          animation: iconmenu 1s;
-  -webkit-animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-          animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  transform: scale(0);
+}
+
+.menuItem1:nth-child(2) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 200ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 200ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem1:nth-child(3) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 400ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 400ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem1:nth-child(4) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 600ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 600ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem2:nth-child(2) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 800ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 800ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem2:nth-child(3) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1000ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1000ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem2:nth-child(4) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1200ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1200ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem3:nth-child(2) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1400ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1400ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem3:nth-child(3) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1600ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1600ms 1 normal none running;
+  max-width: 100%;
+}
+
+.menuItem3:nth-child(4) {
+  -webkit-animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1800ms 1 normal none running;
+          animation: iconmenu 2000ms cubic-bezier(0.5, 1.58, 0.34, 0.82) 1800ms 1 normal none running;
   max-width: 100%;
 }
 
@@ -539,7 +562,7 @@ header {
 }
 
 .menuCategoryTitle {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -548,7 +571,7 @@ header {
 
 .menuRestaurantImage {
   max-width: 100%;
-  max-height: 32rem;
+  max-height: 16rem;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -572,42 +595,55 @@ header {
   white-space: nowrap;
 }
 
-.menuItem .menuSelection .checkIcon {
-  font-size: 3rem;
+.checkIcon {
   color: white;
-  transform: rotate(360deg);
-  transition: 1s ease-in-out;
-}
-
-.menuItem .menuSelection {
-  background: #99e2d0;
-  height: auto;
-  width: 0;
-  opacity: 0;
-  border-radius: 15px 0px 0px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-timing-function: ease-in;
-  transition: transform 1s ease-in-out, width 1s ease-in-out, opacity 1ms ease-in-out;
+  font-size: 36px !important;
+  -webkit-animation-name: spin;
+          animation-name: spin;
+  -webkit-animation-duration: 4050ms;
+          animation-duration: 4050ms;
+  -webkit-animation-iteration-count: 10;
+          animation-iteration-count: 10;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
 }
 
 .menuSelection {
-  background-color: #99e2d0;
+  background: #99e2d0;
   margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
+  cursor: pointer;
+  width: 0;
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-:hover.menuSelection {
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menuSelection:hover {
+  z-index: 10;
   margin-right: -1rem;
   background-color: #99E2D0;
   opacity: 1;
   justify-content: center;
-  transform: rotate(360deg);
   width: 100px;
+  transition: transform ease-in-out 1s, width ease-in-out 1s, opacity 1s ease-in-out;
 }
 
 .menuItem .menuInfo {
@@ -619,46 +655,58 @@ header {
   align-items: center;
 }
 
-.menuItem:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-
 h3.menuTitle {
   font-weight: 700;
   margin-bottom: 14px;
 }
 
-.checkIcon {
-  transition: width 2s, height 4s;
-}
-
 .menuwrapper {
   max-width: 1280px;
-  margin: auto;
   position: relative;
 }
 
 .menu {
+  display: block;
+  margin: auto;
   margin-top: -4rem;
   border-radius: 2rem 2rem 0 0;
   background-color: #f6f6f6;
   z-index: 1;
   position: relative;
-  padding: 3rem;
+  padding: 1rem;
 }
 
+.menuItem .menuInfo .menuText .menuDetails {
+  font-weight: 200;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menuItem .menuInfo .menuText .menuTitle {
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 768px) {
+  .allMenus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .menuList {
+    width: 30%;
+  }
+}
 footer {
   display: flex;
   flex-direction: column;
   color: white;
   text-decoration: none;
   background-color: black;
-  width: 100%;
   padding-left: 40px;
   padding-bottom: 10px;
   padding-top: 30px;
-  margin-top: 40px;
   font-size: 1.4rem;
 }
 footer li {

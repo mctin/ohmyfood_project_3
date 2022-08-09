@@ -5,7 +5,9 @@
   padding: 0;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -29,7 +31,7 @@
 }
 
 .heart i:hover {
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: linear-gradient(#9356dc, #ff79da);
   color: #fff;
   font-weight: 600;
   transform: scale(1.2);
@@ -222,7 +224,8 @@ a {
 .orderCard {
   background: #f6f6f6;
   padding: 1rem;
-  box-shadow: rgba(50, 50, 93, 0) 0px 5px 20px 0px, rgba(0, 0, 0, 0.3) -1px 5px 30px -10px;
+  box-shadow: rgba(50, 50, 93, 0) 0px 5px 20px 0px,
+    rgba(0, 0, 0, 0.3) -1px 5px 30px -10px;
   border-radius: 2rem;
   margin-left: 1.5rem;
   position: relative;
@@ -277,7 +280,8 @@ a {
 
 .restaurantItem:hover {
   filter: brightness(1.1);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .restaurantItem .restaurantInfo {
@@ -328,21 +332,18 @@ a {
   display: flex;
   flex-direction: column;
 }
-
 .menuCategoryTitle {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
 }
-
 .menuRestaurantImage {
   object-fit: cover;
   width: 100%;
   height: 200px;
 }
-
 .menuCategoryTitle::after {
   content: "";
   width: 5rem;

@@ -11,25 +11,25 @@ body {
     font-family: Roboto,sans-serif;
 }
 h1 {
-    font-family: "roboto", sans-serif;
+    font-family: "Shrikhand", sans-serif;
     font-size:1.5rem;
     font-weight: 300;
 }
 h2{
     font-family: "roboto", sans-serif;
-    font-size:2.2rem;
+    font-size:1.4rem;
     font-weight: 400;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 h3{
     font-family: "roboto", sans-serif;
-    font-size:1.4rem;
-    font-weight: 300;
+    font-size:1.2rem;
+    font-weight: 700;
 }
 p {
     font-family: 'roboto';
-    font-size:1.4rem;
+    font-size:1rem;
     font-weight: 200;
 }
 a {
@@ -39,6 +39,13 @@ a {
 .homeSection {
     display: flexbox;
     margin:10px;
+}
+@media (min-width:961px)  { 
+    .gridList{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        }
 }
 .reservez {
     align-items: center;
@@ -50,7 +57,7 @@ a {
     }
     h3 {
         padding-top: 10px;
-    }   
+    } 
 }
 .animation {
     position: fixed;
@@ -58,58 +65,47 @@ a {
     width: 100%;
     left: 0;
     top: 0;
-    background-color: hsla(0,0%,100%,1);
-    animation: loader 0s;
-    animation-delay: 8s;
+    background-color: hsla(0,0%,100%,.9);
+    animation: loader 2s;
+    animation-delay: 3s;
     animation-fill-mode: both;
     z-index: 10000;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.animation__item--1 {
-    background-color:$primaire-color;
-}
 .animation__item {
-    height: 10rem;
-    width: 10rem;
-    border:red solid 2px;
-   //animation: jiggle 9s;
-    animation-iteration-count: 1;
-    animation: 7s ease 0ms 1 normal none running jiggle;
+    font-size: 10rem;
+    color: $primaire-color;
+    //transition:opacity 3s, visibility 3s;
+    animation: jiggle 2s;
+    animation-iteration-count: 2;
+    animation: 3s ease 1ms 1 normal none running jiggle;
 }
-.animation__item--2 {
-    background-color:$secondaire-color;
-    animation-delay: 0s;
-}
-.animation__item--3 {
-    background-color:$tertiaire-color;
-    animation-delay: 0s;
-}
+
 @keyframes loader {
+50% { opacity: 20%; 
+        z-index: -10;
+    } 
 100% { opacity: 0; 
         z-index: -10;
     }  
 }  
 @keyframes jiggle {
     0% {
-        transform: translateY(0) rotate(360deg);
+        transform: translateX(10rem) rotate(360deg);
     }
     25% {
-        transform: translateX(6rem) rotate(-360deg);
+        transform: translateX(10rem) rotate(180deg);
     }
     75% {
-        transform: translateY(-6rem) rotate(360deg);
+        transform: translateY(-6rem) rotate(1800deg);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(100);
+    
     } 
 } 
-.animation__itemContainer {
-    display: flex;
-    width: 30rem;
-    justify-content: space-between;
-}
 @keyframes slideup {
     0% {
     transform: translatey(20px);
@@ -216,7 +212,10 @@ a {
     background: #f5edff;
 }  
 .restaurantSection {
-    background: #f6f6f6;
+    background: #f6f6f6;;
+    display: flex;
+    padding: 10px 10px 37px 10px;
+    flex-direction: column;
 }
 .homeSection {
     padding: 6rem 2rem;
@@ -225,7 +224,7 @@ a {
     margin-bottom: 2rem;
 }   
 .restaurantItem {
-    width: 100%;
+    width:100%;
     min-width: 2.3rem;
     border-radius: 2rem;
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
@@ -239,7 +238,7 @@ a {
     box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px, rgb(0 0 0 / 30%) 0px 18px 36px -18px;
 }
 .restaurantItem .restaurantInfo {
-    padding: 2rem;
+    padding: 1rem;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
@@ -249,7 +248,6 @@ a {
     font-weight: 600;
     margin-bottom: 1.2rem;
     font-size: 1.6rem;
-
 }
 .restaurantImage{
     width:100%;
@@ -267,7 +265,19 @@ a {
     top: 1.5rem;
     right: 1.5rem;
 }
-//menuboxes//
+@media (min-width: 961px){
+    .restoList {
+    display: flex;
+    flex-direction: row;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    }
+    .restaurantItem {
+        padding: 9px;
+    }
+}
+//menuboxes header//
 header {
     background: white;
     z-index: 2;
@@ -279,8 +289,8 @@ header {
     top: 0;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    }
+    align-items: center;  
+}
 .backarrow {
         position: absolute;
         left: 2rem;
@@ -298,6 +308,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+//menuboxes page//
 .menuHeader {
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -309,24 +320,53 @@ header {
     display: flex;
     align-items: flex-end;
 }
-.menuItem:nth-child(3) {
-    animation-delay: calc(3s / 5);
-}
 .menuItem {
     background-color: #fff;
-    padding: 1rem;
+    padding: .5rem;
     display: flex;
     border-radius: 0.75rem;
     margin: 1rem 0;
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     overflow: hidden;
     cursor: pointer;
-    animation: iconmenu 1s;
-    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
-    animation-fill-mode: both;
-    transform: scale(0);
+}
+.menuItem1:nth-child(2) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 200ms 1 normal none running;
     max-width: 100%;
 }
+.menuItem1:nth-child(3) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 400ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem1:nth-child(4) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 600ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem2:nth-child(2) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 800ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem2:nth-child(3) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 1000ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem2:nth-child(4) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 1200ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem3:nth-child(2) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 1400ms 1 normal none running;
+    max-width: 100%;
+}   
+.menuItem3:nth-child(3) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 1600ms 1 normal none running;
+    max-width: 100%;
+}
+.menuItem3:nth-child(4) {
+    animation:iconmenu 2000ms cubic-bezier(.5,1.58,.34,.82) 1800ms 1 normal none running;
+    max-width: 100%;
+}
+ 
 .menuRestaurantTitle {
     font-family: "Shrikhand", cursive;
     font-size: 2.2rem;
@@ -343,7 +383,7 @@ header {
     grid-template-columns: minmax(0, 1fr);
 }
 .menuCategoryTitle {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-weight: 400;
@@ -351,7 +391,7 @@ header {
 }
 .menuRestaurantImage {
     max-width: 100%;
-    max-height: 32rem;
+    max-height: 16rem;
     width: 100%;
     object-fit: cover;
 }
@@ -364,7 +404,6 @@ header {
     bottom: -1.5rem;
     left: 0;
 }
-
 .menuItem .menuInfo .menuText {
     display: flex;
     flex-direction: column;
@@ -372,44 +411,41 @@ header {
     overflow: hidden;
     white-space: nowrap;
 }
-.menuItem .menuSelection .checkIcon {
-    font-size: 3rem;
+.checkIcon {
     color: white;
-    transform: rotate(360deg);
-    transition: 1s ease-in-out;
+    font-size: 36px !important;
+    animation-name: spin;
+    animation-duration: 4050ms;
+    animation-iteration-count: 10;
+    animation-timing-function: ease-out;
 }
-.menuItem .menuSelection {
-    background: #99e2d0;
-  //  cursor: pointer;
-    height: auto;
-    width: 0;
-    opacity: 0;
-    border-radius: 15px 0px 0px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition-timing-function: ease-in;
-    transition: transform 1s ease-in-out, width 1s ease-in-out, opacity 1ms ease-in-out;
-}
+
 .menuSelection {
-    background-color: #99e2d0;
+    background: #99e2d0;
     margin: -1rem -5rem -1rem 1rem;
-    width: 4rem;
+    cursor: pointer;
+    width: 0; 
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    //transition-duration: 1s;
 }
-:hover.menuSelection{
-       // z-index:10;
-        margin-right:-1rem;
+@keyframes spin {
+    0% {
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.menuSelection:hover{
+        z-index:10;
+        margin-right: -1rem;
         background-color: $tertiaire-color;
         opacity: 1;
         justify-content: center;
-        transform: rotate(360deg);
-        //transition-duration: s;
         width: 100px;
-        //transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        transition: transform ease-in-out 1s, width  ease-in-out 1s, opacity 1s ease-in-out;
 }
 .menuItem .menuInfo {
     max-width: 100%;
@@ -419,58 +455,67 @@ header {
     justify-content: space-between;
     align-items: center;
 }  
-.menuItem:nth-child(2) {
-    animation-delay: calc(2s / 5);
-}
-h3.menuTitle{
+h3.menuTitle {
     font-weight: 700;
     margin-bottom: 14px;
-}
-.checkIcon{
-    //font-size: 24px;
-    transition: width 2s, height 4s;
-    //transform: rotate(360deg);
-    //transition-duration: 600ms;
-    //width: 100px;
-    //transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
+} 
 .menuwrapper {
     max-width: 1280px;
-    margin: auto;
     position: relative;
 }    
-.menu{
+.menu {
+    display: block;
+    margin:auto;
     margin-top: -4rem;
     border-radius: 2rem 2rem 0 0;
     background-color: #f6f6f6;
     z-index: 1;
     position: relative;
-    padding:3rem
+    padding:1rem;
 }
+.menuItem .menuInfo .menuText .menuDetails {
+    font-weight: 200;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}   
+.menuItem .menuInfo .menuText .menuTitle {
+        font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+@media only screen and (min-width: 768px) {
+    .allMenus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    }
+    .menuList{
+    width: 30%;
+    }
+}
+//footer//
 footer {
         display: flex;
         flex-direction: column;
         color:white;
         text-decoration:none;
         background-color: black;
-        width: 100%;
         padding-left:40px;
         padding-bottom: 10px;
         padding-top: 30px;
-        margin-top: 40px;
         font-size: 1.4rem;
     li{
         list-style-type: none;
         }
         a{
-            color: white;
+        color: white;
         }
 }
 .iconmenu{
         width: 20Px;
         margin-right: 10px;
 }
-.nav{
+.nav {
     margin-left: 12Px;
     line-height: 2;
 }
