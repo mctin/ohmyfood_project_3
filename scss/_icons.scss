@@ -6,7 +6,7 @@
   left: 0;
   top: 0;
   background-color: hsla(0,0%,100%,.9);
-  animation: loader 2s;
+  animation: loader 4s;
   animation-delay: 3s;
   animation-fill-mode: both;
   z-index: 10000;
@@ -15,17 +15,19 @@
   justify-content: center;
 }
 .animation__item {
-  font-size: 10rem;
-  color: $primaire-color;
-  //transition:opacity 3s, visibility 3s;
-  animation: jiggle 2s;
+  font-size: 5rem;
+  color: white;
+  background: linear-gradient(#9356DC, #FF79DA);
   animation-iteration-count: 2;
-  animation: 3s ease 1ms 1 normal none running jiggle;
+  animation: 3s ease 400ms 1 normal none running jiggle;
 }
 @keyframes loader {
 50% { opacity: 20%; 
       z-index: -10;
-  } 
+  }
+  75% { opacity: 10%; 
+    z-index: -10;
+} 
 100% { opacity: 0; 
       z-index: -10;
   }  
@@ -34,32 +36,17 @@
   0% {
       transform: translateX(10rem) rotate(360deg);
   }
-  25% {
-      transform: translateX(10rem) rotate(180deg);
+  30% {
+      transform: translateX(20rem) rotate(360deg);
   }
-  75% {
-      transform: translateY(-6rem) rotate(1800deg);
+  50% {
+      transform: translateY(20rem) rotate(180deg);
   }
   100% {
       transform: translateY(100);
   
   } 
 } 
-/*.icon {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 20;
-  cursor: pointer;
-  width: 1rem;
-  position: relative;
-  svg {
-    width: 1rem;
-    height: 100%; 
-    width: 100%; 
-    left: 0; 
-    top: 0;
-     }
-}*/
 ////////////HEART ICON ///////////////////
 .heart i:hover {
   background: linear-gradient(#9356DC, #FF79DA);
@@ -73,8 +60,8 @@
   z-index: 1000;
 }
 .heart {
-display: flex;
-align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
   bottom: 1em;
   color: #000000;
   cursor: pointer;

@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,500;1,900&family=Shrikhand&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+.icon {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 20;
+  cursor: pointer;
+  width: 1rem;
+  position: relative;
+}
+.icon svg {
+  width: 1rem;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.heart i:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background: -o-linear-gradient(#9356dc, #ff79da);
+  background: linear-gradient(#9356dc, #ff79da);
+  color: #fff;
+  font-weight: 600;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heart {
+  bottom: 1em;
+  color: #000000;
+  cursor: pointer;
+  font-size: 25px;
+  position: sticky;
+  right: 1em;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.heart-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
+}
+
+.heart-main:hover path {
+  -webkit-animation: stroke-animation 1s forwards;
+          animation: stroke-animation 1s forwards;
+  fill: red;
+}
+
+.heart-main:hover ~ .heart-background path {
+  -webkit-animation: fade-animation 1s ease-in-out forwards;
+          animation: fade-animation 1s ease-in-out forwards;
+}
+
+/*@keyframes stroke-animation {
+  0% {
+    stroke: palevioletred;
+    fill:green;
+    transform: scale(1);
+  }
+  30% {
+    color: #ff79da;
+  }
+  60% {
+    stroke: palevioletred;
+    fill: red;
+    transform: scale(1);
+  }
+  80% {
+    fill:violet;
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke: var(--pink);
+    fill: blueviolet;
+  }
+  */
+body {
+  background-color: white;
+  color: black;
+  height: 100vh;
+  font-family: "roboto", sans-serif;
+  line-height: 1;
+}
+
+h1 {
+  font-family: "roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+h2 {
+  font-family: "roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: "roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+p {
+  font-family: "roboto";
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.homeSection {
+  display: flexbox;
+  margin: 10px;
+}
+
+.reservez {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(235, 234, 227);
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+}
+.reservez h2 {
+  padding: 10px;
+}
+.reservez h3 {
+  padding-top: 10px;
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+.social-icons a {
+  padding: 0.4rem;
+}
+.social-icons a:hover {
+  color: #ff79da;
+}
+
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 28px;
+  background-color: lightgray;
+  cursor: pointer;
+  -webkit-transition: all 0.05s ease-in-out;
+  -o-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+}
+.search-form--box {
+  background-color: lightgrey;
+  color: black;
+  border: unset;
+}
+.search-form--box a {
+  color: black;
+}
+
+.search-form--box {
+  font-size: 24px;
+  font-family: "roboto" sans-serif;
+}
+
+.explorer-btn_resto {
+  color: white;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  background: #ff79da;
+  background: -o-linear-gradient(288deg, #ff79da 0%, #9356dc 100%);
+  background: linear-gradient(162deg, #ff79da 0%, #9356dc 100%);
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  white-space: nowrap;
+  margin: 4rem auto;
+  border-radius: 30px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  border-width: 0px;
+  font-family: "roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.fonctionnement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.restoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orderCard {
+  background: #f6f6f6;
+  padding: 1rem;
+  -webkit-box-shadow: rgba(50, 50, 93, 0) 0px 5px 20px 0px,
+    rgba(0, 0, 0, 0.3) -1px 5px 30px -10px;
+          box-shadow: rgba(50, 50, 93, 0) 0px 5px 20px 0px,
+    rgba(0, 0, 0, 0.3) -1px 5px 30px -10px;
+  border-radius: 2rem;
+  margin-left: 1.5rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.orderCard .orderNumber {
+  background: #9356dc;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  left: -1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.orderCard .orderIcon {
+  color: #7e7e7e;
+}
+
+.orderCard.pinkOrderCard {
+  background: #f5edff;
+}
+
+.restaurantSection {
+  background: #f6f6f6;
+}
+
+.homeSection {
+  padding: 6rem 2rem;
+}
+
+.homeSection .sectionTitle {
+  margin-bottom: 2rem;
+}
+
+.restaurantItem {
+  width: 100%;
+  min-width: 2.3rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  vertical-align: inherit;
+  position: relative;
+  -webkit-transition: -webkit-filter 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-filter 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  -o-transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+
+.restaurantItem:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.restaurantItem .restaurantInfo {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.restaurantItem .restaurantName {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.restaurantImage {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2rem 2rem 0 0;
+}
+
+.tag {
+  background: #a9e0d1;
+  color: #3b8468;
+  font-weight: 500;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.3rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.restaurantItem .restaurantName {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.menuList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+.allMenus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.menuCategoryTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+.menuRestaurantImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+.menuCategoryTitle::after {
+  content: "";
+  width: 5rem;
+  height: 0.5rem;
+  background-color: #99e2d0;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+}
+
+.menuItem {
+  background: white;
+  height: 7rem;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: slideup 1s forwards;
+          animation: slideup 1s forwards;
+  opacity: 100;
+}
+
+.menuItem .menuInfo {
+  padding: 1.5rem;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+
+header {
+  background: white;
+  z-index: 2;
+  font-family: "Shrikhand", cursive;
+  font-size: 2.5rem;
+  height: 6rem;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header ::before {
+  content: "\f060";
+  -ms-flex-line-pack: left;
+      align-content: left;
+  color: #9356dc;
+  font-weight: 900;
+}
+
+.headertitle ::before {
+  content: "heel";
+  -ms-flex-line-pack: left;
+      align-content: left;
+  color: #9356dc;
+  font-weight: 900;
+  display: block;
+}
+
+.backLink {
+  margin-left: 2rem;
+  position: absolute;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.backLink::before {
+  content: f060;
+  -ms-flex-line-pack: left;
+      align-content: left;
+}
+.backLink .header .headerLogo {
+  margin: auto;
+  height: 3rem;
+}
+.backLink .menuWrapper {
+  width: 100%;
+  border-radius: 4rem 4rem 0 0;
+  background: whitesmoke;
+  padding: 2rem;
+  position: relative;
+  margin-top: -4rem;
+}
+.backLink .menuHeader {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.backLink .menuRestaurantTitle {
+  font-family: "Shrikhand", cursive;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+.backLink footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  width: 100%;
+  padding-left: 40px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  margin-top: 40px;
+  font-size: 1.4rem;
+}
+.backLink footer li {
+  list-style-type: none;
+}
+.backLink footer a {
+  color: white;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3Njc3MvbWFpbi5zY3NzIiwiLi4vLi4vc2Nzcy9fY29uZmlnLnNjc3MiLCIuLi9zdHlsZS5jc3MiLCIuLi8uLi9zY3NzL19pY29ucy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFRLG9JQUFBO0FDR1I7RUFDSSw4QkFBQTtVQUFBLHNCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7QUNESjs7QURNQTs7O0VBR0ksU0FBQTtFQUNBLFVBQUE7RUNIRiwyQkFBbUI7VUFBbkIsbUJBQW1CO0VBQ25CLHVCQUF1QjtBQ1J6Qjs7QURXQTtFQ1JFLGlCQUFBO0VBQ0EsYUFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtFRFVBLFdBQVc7RUNUWCxrQkFBQTtBRFdGO0FBQ0E7RUNUSSxXQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RURXRixPQUFPO0VBQ1AsTUFBTTtBQ0pSOztBRE9BO0VDSkksdUZBQUE7RUFBQSxnREFBQTtFQUFBLDZDQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsNkJBQUE7TUFBQSx5QkFBQTtVQUFBLHFCQUFBO0VBQ0EscUJBQUE7RUFDQSxrQkFBQTtFRE1GLDZCQUE2QjtFQUM3QixvQ0FBb0M7QUNMdEM7O0FEUUE7RUNMSSxXQUFBO0VBQ0EsY0FBQTtFQUNBLGVBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RURPRixVQUFVO0VBQ1Ysd0NBQWdDO0VBQWhDLG1DQUFnQztFQUFoQyxnQ0FBZ0M7QUNObEM7O0FEU0E7RUFDRSxrQ0FBa0M7RUFDbEMsZ0JBQWdCO0FDTmxCOztBRFNBO0VDTkksa0JBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFRFFGLFdBQVc7RUFDWCwwREFBMEQ7QUNQNUQ7O0FEVUE7RUFDRSwrQ0FBdUM7VUFBdkMsdUNBQXVDO0VBQ3ZDLFNBQVM7QUNQWDs7QURVQTtFQUNFLHlEQUFpRDtVQUFqRCxpREFBaUQ7QUNQbkQ7O0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7R0g1REk7QUVnR0o7RUY5RkksdUJB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 */
