@@ -1,4 +1,51 @@
-.icon {
+//////////////////////////////////////SPINNER//////////////////////
+ .animation {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: hsla(0,0%,100%,.9);
+  animation: loader 2s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animation__item {
+  font-size: 10rem;
+  color: $primaire-color;
+  //transition:opacity 3s, visibility 3s;
+  animation: jiggle 2s;
+  animation-iteration-count: 2;
+  animation: 3s ease 1ms 1 normal none running jiggle;
+}
+@keyframes loader {
+50% { opacity: 20%; 
+      z-index: -10;
+  } 
+100% { opacity: 0; 
+      z-index: -10;
+  }  
+}  
+@keyframes jiggle {
+  0% {
+      transform: translateX(10rem) rotate(360deg);
+  }
+  25% {
+      transform: translateX(10rem) rotate(180deg);
+  }
+  75% {
+      transform: translateY(-6rem) rotate(1800deg);
+  }
+  100% {
+      transform: translateY(100);
+  
+  } 
+} 
+/*.icon {
   fill: transparent;
   stroke: black;
   stroke-width: 20;
@@ -12,18 +59,9 @@
     left: 0; 
     top: 0;
      }
-}
+}*/
+////////////HEART ICON ///////////////////
 .heart i:hover {
-    background: linear-gradient(#9356DC, #FF79DA);
-    color: #fff;
-    font-weight: 600;
-    transform: scale(1.2);
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.heart div:hover {
   background: linear-gradient(#9356DC, #FF79DA);
   color: #fff;
   font-weight: 600;
@@ -32,36 +70,120 @@
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1000;
 }
 .heart {
-  display: flex;
-  align-items: flex-end;
-    bottom: 1em;
-    color: #000000;
-    cursor: pointer;
-    font-size: 25px;
-    position: sticky;
-    right: 1em;
-    transition: all .2s ease-in-out;
+display: flex;
+align-items: flex-end;
+  bottom: 1em;
+  color: #000000;
+  cursor: pointer;
+  font-size: 25px;
+  position: sticky;
+  right: 1em;
+  transition: all 2s ;
 }
 .far {
-    font-family: "Font Awesome 5 Free";
-   font-weight: 400;
+  font-family: "Font Awesome 5 Free";
+ font-weight: 400;
 }
-//.heart-background {
-   // position: absolute;
-    //left: 0;
-   // right: 0;
-   // z-index: -1;
-   // color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
- // }
-//.heart-main:hover {
-  //  animation: stroke-animation 1s forwards;
-   // color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
-   //
- // }
-//.heart-main:hover ~ .heart-background path {
-   // animation: fade-animation 1s ease-in-out forwards;
- // }
+.heart-background {
+position: absolute;
+left: 0;
+right: 0;
+z-index: -100;
+color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
+}
+.heart-main:hover ~ .heart-background path {
+animation: fade-animation 2s ease-in-out forwards;
+}
+////////////////////////////MENU CHOICE ANIMATION////////////////////////////////
+.menuItem1:nth-child(2) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem1:nth-child(3) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 2s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem1:nth-child(4) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 3s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem2:nth-child(2) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 3s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem2:nth-child(3) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 4s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem2:nth-child(4) {
+  animation:imenuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 6s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem3:nth-child(2) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 8s 1 normal none running;
+  max-width: 100%;
+}   
+.menuItem3:nth-child(3) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 9s 1 normal none running;
+  max-width: 100%;
+}
+.menuItem3:nth-child(4) {
+  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 10s 1 normal none running;
+  max-width: 100%;
+}
+@keyframes menuchoice {
+  0% {
+  transform: scale(0);
+  }
+  100% {
+  transform: scale(1);
+  }
+}
+/////////////////////////////SPINNING CHECK ///////////////////////////@for $var from start to end {
+.checkIcon {
+  color: white;
+  font-size: 36px !important;
+  animation-name: spin;
+  animation-duration: 4050ms;
+  animation-iteration-count: 10;
+  animation-timing-function: ease-out;
+}
+  @keyframes spin {
+  0% {
+      transform:rotate(0deg);
+  }
+  100%{
+      transform:rotate(360deg);
+  }
+}
+@keyframes slideup {
+  0% {
+  transform: translatey(20px);
+  opacity: 0%;
+  }
+  100% {
+      transform: translatey(0px);
+      opacity: 100%;
+  }
+}
+//////////////////////////////////Social ICON/////////////////////
+.social-icons{
+  position:fixed;
+  bottom: 1rem;
+  left: 1rem;
+a {
+   padding:.4rem;
+&:hover{
+       color: $secondaire-color;   
+   }
+}
+}
 
-
+////////////////////////////////////FOOTER/////////////////////////
+.iconmenu{
+  width: 20Px;
+  margin-right: 10px;
+}
