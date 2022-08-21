@@ -27,7 +27,7 @@
         background: linear-gradient(162deg, #ff79da 0%, #9356dc 100%);
         width: min-content;
         white-space: nowrap;
-        margin: 4rem auto;
+        margin: 20px auto;
         border-radius: 30px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         cursor: pointer;
@@ -35,7 +35,12 @@
         font-family: "roboto", sans-serif;
         font-size:1rem;
         font-weight: 300;
- }
+}
+.explorer-btn_resto:hover {
+            background: linear-gradient(162deg, #ff79da 20%, #9356dc 100%);
+            box-shadow: rgba(149, 157, 165, 100%) 0px 8px 24px;
+}
+
  .reservez {
         align-items: center;
         background-color:rgb(235, 234, 227);

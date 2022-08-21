@@ -5,8 +5,8 @@
   width: 100%;
   left: 0;
   top: 0;
-  background-color: hsla(0,0%,100%,.9);
-  animation: loader 4s;
+  background-color: hsla(0,0%,100%,1);
+  animation: loader 3s;
   animation-delay: 3s;
   animation-fill-mode: both;
   z-index: 10000;
@@ -19,16 +19,20 @@
   color: white;
   background: linear-gradient(#9356DC, #FF79DA);
   animation-iteration-count: 2;
-  animation: 3s ease 400ms 1 normal none running jiggle;
+  animation: 2s ease-in-out 400ms 1 normal none running jiggle;
 }
 @keyframes loader {
 50% { opacity: 20%; 
       z-index: -10;
-  }
-  75% { opacity: 10%; 
+}
+75% { opacity: 20%; 
     z-index: -10;
 } 
-100% { opacity: 0; 
+
+85% { opacity: 1%; 
+    z-index: -10;
+} 
+100% { opacity: 0%; 
       z-index: -10;
   }  
 }  
@@ -37,15 +41,14 @@
       transform: translateX(10rem) rotate(360deg);
   }
   30% {
-      transform: translateX(20rem) rotate(360deg);
+      transform: translateY(15rem) rotate(360deg);
   }
   50% {
-      transform: translateY(20rem) rotate(180deg);
+      transform: translateY(7rem) rotate(180deg);
   }
   100% {
       transform: translateY(100);
-  
-  } 
+  }   
 } 
 ////////////HEART ICON ///////////////////
 .heart i:hover {
@@ -144,10 +147,10 @@ animation: fade-animation 2s ease-in-out forwards;
 }
   @keyframes spin {
   0% {
-      transform:rotate(0deg);
+      transform:rotate(360deg);
   }
   100%{
-      transform:rotate(360deg);
+      transform:rotate(0deg);
   }
 }
 @keyframes slideup {
