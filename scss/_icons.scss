@@ -69,17 +69,8 @@
   font-family: "Font Awesome 5 Free";
  font-weight: 400;
 }
-.heart-background {
-position: absolute;
-left: 0;
-right: 0;
-z-index: -100;
-color: linear-gradient(162deg, #ff79da 100%, #7856dc 100%);
-}
-.heart-main:hover ~ .heart-background path {
-animation: fade-animation 2s ease-in-out forwards;
-}
-////////////////////////////MENU CHOICE ANIMATION////////////////////////////////
+
+///////////////////////////////MENU CHOICE ANIMATION////////////////////////////////
 .menuItem1:nth-child(2) {
   animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1s 1 normal none running;
   max-width: 100%;
@@ -167,7 +158,6 @@ a {
    }
 }
 }
-
 ////////////////////////////////////FOOTER/////////////////////////
 .iconmenu{
   width: 20Px;

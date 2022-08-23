@@ -269,20 +269,20 @@ header {
     font-weight: 400;
     position: relative;
 }
+.menuCategoryTitle::after {
+    content: "";
+    width: 5rem;
+    height: 0.5rem;
+    background-color: #99e2d0;
+    position: absolute;
+    bottom: -1.5rem;
+    left: 0;
+  }
 .menuRestaurantImage {
     max-width: 100%;
     max-height: 16rem;
     width: 100%;
     object-fit: cover;
-}
-.menuCategoryTitle::after {
-   content: "";
-    width: 5rem;
-    height: 0.5rem;
-    background-color: #99e2d0;
-   position: absolute;
-   bottom: -1.5rem;
-   left: 0;
 }
 .menuItem .menuInfo .menuText {
     display: flex;
