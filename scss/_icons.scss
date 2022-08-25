@@ -124,9 +124,9 @@
   color: white;
   font-size: 36px !important;
   animation-name: spin;
-  animation-duration: 4050ms;
-  animation-iteration-count: 10;
-  animation-timing-function: ease-out;
+  animation-duration: 3050ms;
+  animation-iteration-count: infinite;
+  animation-timing-function:  3s, ease-out;
 }
   @keyframes spin {
   0% {

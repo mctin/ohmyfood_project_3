@@ -147,7 +147,8 @@
     border-radius: 2rem;
     left: 0;
     top: 0;
-    position: absolute;     
+    position: absolute; 
+    z-index: 2000;    
  }
 .restaurantImage {
     width:100%;
@@ -302,14 +303,14 @@ header {
     align-items: center;
     justify-content: center;
 }
-.menuSelection:hover{
+.menuInfo:hover ~ .menuSelection {
         z-index:10;
         margin-right: -1rem;
         background-color: $tertiaire-color;
         opacity: 1;
         justify-content: center;
         width: 100px;
-        transition: transform ease-in-out 1s, width  ease-in-out 1s, opacity 1s ease-in-out;
+        transition: transform ease-in-out 10s, width  ease-in .5s, opacity ease-in-out;
 }
 .menuItem .menuInfo {
     max-width: 100%;
@@ -319,7 +320,6 @@ header {
     justify-content: space-between;
     align-items: center;
 }  
-
 h3.menuTitle {
     font-weight: 700;
     margin-bottom: 14px;
