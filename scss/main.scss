@@ -125,7 +125,6 @@
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
     cursor: pointer;
     vertical-align: inherit;
-    //padding: 2px 2px 2px 2px;
 }
 .restaurantInfo {
     display: flex;
@@ -140,7 +139,6 @@
 .restocard :hover {
    box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px, rgb(0 0 0 / 30%) 0px 18px 36px -18px;
 }
-
 .clickable {
     height: 100%;
     width: 100%;
@@ -148,7 +146,7 @@
     left: 0;
     top: 0;
     position: absolute; 
-    z-index: 2000;    
+    z-index: initial;    
  }
 .restaurantImage {
     width:100%;
@@ -252,7 +250,6 @@ header {
     font-size: 2.2rem;
     font-style: italic;
 }
-
 .menuList {
     display: flex;
     flex-direction: column;
@@ -278,7 +275,7 @@ header {
     position: absolute;
     bottom: -1.5rem;
     left: 0;
-  }
+}
 .menuRestaurantImage {
     max-width: 100%;
     max-height: 16rem;
@@ -348,7 +345,7 @@ h3.menuTitle {
         overflow: hidden;
         text-overflow: ellipsis;
 }
-@media only screen and (min-width: 996px) {
+@media only screen and (min-width: 992px) {
     .allMenus {
     display: flex;
     flex-direction: row;

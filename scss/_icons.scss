@@ -52,7 +52,7 @@
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 1000;
+  z-index: 2000;
 }
 .heart {
   display: flex;
@@ -126,7 +126,7 @@
   animation-name: spin;
   animation-duration: 3050ms;
   animation-iteration-count: infinite;
-  animation-timing-function:  3s, ease-out;
+  animation-timing-function: ease-out;
 }
   @keyframes spin {
   0% {
