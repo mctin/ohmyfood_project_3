@@ -45,6 +45,7 @@
 } 
 ////////////HEART ICON ///////////////////
 .heart i:hover {
+  z-index: 2000;
   background: linear-gradient(#9356DC, #FF79DA);
   font-weight: 600;
   transform: scale(1.2);
@@ -52,9 +53,10 @@
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 2000;
+  
 }
 .heart {
+  z-index: 2000;
   display: flex;
   align-items: flex-end;
   bottom: 1em;
@@ -63,7 +65,7 @@
   font-size: 25px;
   position: sticky;
   right: 1em;
-  transition: all 2s ;
+  transition: all 2s;
 }
 .far {
   font-family: "Font Awesome 5 Free";
@@ -72,65 +74,79 @@
 
 ///////////////////////////////MENU CHOICE ANIMATION////////////////////////////////
 .menuItem1:nth-child(2) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 1000ms;
   max-width: 100%;
 }
 .menuItem1:nth-child(3) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 400ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 1500ms;
   max-width: 100%;
 }
 .menuItem1:nth-child(4) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 800ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 2000ms;
   max-width: 100%;
 }
 .menuItem1:nth-child(5) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1000Ms 1 normal none running;
-  max-width: 100%
+  animation-name: menuchoice; 
+  animation-duration: 2500ms;
+  max-width: 100%;
 }
 .menuItem2:nth-child(2) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1200ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 3000ms;
   max-width: 100%;
 }
 .menuItem2:nth-child(3) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1400ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 3500ms;
   max-width: 100%;
 }
 .menuItem2:nth-child(4) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1600ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 4000ms;
   max-width: 100%;
 }
 .menuItem3:nth-child(2) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 1800Ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 4500ms;
   max-width: 100%;
 }   
 .menuItem3:nth-child(3) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 2000ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 5000ms;
   max-width: 100%;
 }
 .menuItem3:nth-child(4) {
-  animation:menuchoice 2000ms cubic-bezier(.5,1.58,.34,.82) 2200Ms 1 normal none running;
+  animation-name: menuchoice; 
+  animation-duration: 5500ms;
   max-width: 100%;
 }
 @keyframes menuchoice {
   0% {
-    transform: translatey(20px);
-    opacity: 0%;
+    transform: translatey(10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translatey(70px);
+    opacity: 0;
   }
   100% {
     transform: translatey(0px);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 /////////////////////////////SPINNING CHECK ///////////////////////////@for $var from start to end {
 .checkIcon {
   color: white;
   font-size: 36px !important;
-}
-.menuInfo:hover ~ .menuSelection .checkIcon {
-  animation-name: spin;
-  animation-duration:5s;
-  animation-iteration-count: 1;
 } 
+.menuItem :hover ~ .menuSelection .checkIcon {
+  animation-name: spin;
+  animation-duration:1.5s;
+  animation-iteration-count: 1;
+}
 @keyframes spin {
   0% {
       transform:rotate(360deg);
@@ -139,16 +155,15 @@
     transform:rotate(0deg);
 }
 }
-@keyframes slideup {
-  0% {
-  transform: translatey(20px);
-  opacity: 0%;
-  }
-  100% {
-      transform: translatey(0px);
-      opacity: 100%;
-  }
-}
+//@keyframes slideup {
+ // 0% {
+//  transform: translatey(20px);
+ // opacity: 0%;
+//  }
+//  100% {
+//      transform: translatey(0px);
+ //     opacity: 100%;
+ // }
 //////////////////////////////////Social ICON/////////////////////
 .social-icons{
   position:fixed;

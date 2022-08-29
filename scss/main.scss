@@ -125,6 +125,7 @@
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
     cursor: pointer;
     vertical-align: inherit;
+    margin: 30px 0 0 0;
 }
 .restaurantInfo {
     display: flex;
@@ -145,8 +146,9 @@
     border-radius: 2rem;
     left: 0;
     top: 0;
+    Margin: 10px 0 0 0;
     position: absolute; 
-    z-index: initial;    
+    z-index: 100;    
  }
 .restaurantImage {
     width:100%;
